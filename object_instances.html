@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Lab 3:Object Instances</title>
+</head>
+
+<body>
+
+<h1>My library</h1>
+
+<script type="text/javascript">
+
+	function Books(title, author, pubDate)
+	{
+	
+			this.title = title;
+			this.author = author;
+			this.pubDate = pubDate;
+			this.goPage = function(){
+				//displays requested page	
+		}
+		this.displayBook = function(){
+		
+		var book_title = document.createElement('p');
+		book_title.innerText = this.title;
+		document.body.appendChild(book_title);
+		
+		var book_author = document.createElement('p');
+		book_author.innerText = this.author;
+		document.body.appendChild(book_author);
+		
+		var book_pudDate = document.createElement('p');
+		book_pudDate.innerText = this.pubDate;
+		document.body.appendChild(book_pudDate);
+		}
+	}
+	
+	//generates book
+	var scriptin = new Books('Scripting with Js','Charles Wyke Smith','2010');
+	scriptin.displayBook();//calls function display
+	
+	var myBook = new Books('Up up and Away','Chuck Obaze','2014')
+	myBook.displayBook()
+	
+</script>
+
+
+</body>
+</html>
